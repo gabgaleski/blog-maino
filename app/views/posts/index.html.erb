@@ -1,12 +1,5 @@
 <p style="color: green"><%= notice %></p>
 
-<nav>
-  <ul>
-    <li><%= link_to "Login", login_path %></li>
-    <li><%= link_to "Criar conta", new_user_path %></li>
-  </ul>
-</nav>
-
 <h1>Posts</h1>
 
 <div id="posts">
@@ -18,4 +11,6 @@
   <% end %>
 </div>
 
-<%= link_to "Novo Post", new_post_path %>
+<% if Current.user %>
+  <%= link_to "Novo Post", new_post_path %>
+<% end %>

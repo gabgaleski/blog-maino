@@ -5,14 +5,17 @@ Rails.application.routes.draw do
     resources :comments
   end
   
-  resources :users, only: [:new, :create, :show, :edit, :update, :destroy]
+  get '/users', to: 'users#new'
+  post '/users', to: 'users#create'
+
+  get '/profile', to: 'profiles#edit'
+  patch '/profile', to: 'profiles#update'
 
   get '/', to: 'posts#index'
 
   get '/login', to: 'sessions#new'
   post '/login', to: 'sessions#create'
   
-  post '/logout', to: 'sessions#destroy'
-  get '/logout', to: 'sessions#destroy'
+  delete'/logout', to: 'sessions#destroy'
 
 end
