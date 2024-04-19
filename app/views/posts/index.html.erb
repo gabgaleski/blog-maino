@@ -1,14 +1,21 @@
 <p style="color: green"><%= notice %></p>
 
+<nav>
+  <ul>
+    <li><%= link_to "Login", login_path %></li>
+    <li><%= link_to "Criar conta", new_user_path %></li>
+  </ul>
+</nav>
+
 <h1>Posts</h1>
 
 <div id="posts">
   <% @posts.each do |post| %>
     <%= render post %>
     <p>
-      <%= link_to "Show this post", post %>
+      <%= link_to "Abrir post", post %>
     </p>
   <% end %>
 </div>
 
-<%= link_to "New post", new_post_path %>
+<%= link_to "Novo Post", new_post_path %>
