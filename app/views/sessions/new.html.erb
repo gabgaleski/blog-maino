@@ -1,10 +1,12 @@
 <p style="color: green"><%= notice %></p>
 
-<div>
+<div class="form-control">
   <h2>Login</h2>
   <%= form_with url: login_path do |form| %>
-    Email: <%= form.email_field :email%>
-    Password: <%= form.password_field :password %>
-    <%= form.submit "Login" %>
+    <%= form.label :email, class: "form-label" %>
+    <%= form.email_field :email, class: "form-control"%>
+    <%= form.label :password, class: "form-label" %>
+    <%= form.password_field :password, class: "form-control" %>
+    <%= form.submit "Login", class: "btn btn-primary my-3" %>
   <% end %>
 </div>
