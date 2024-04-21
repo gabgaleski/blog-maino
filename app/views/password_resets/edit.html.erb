@@ -1,0 +1,11 @@
+<h1>Nova senha</h1>
+
+<%= form_with mordel: @user, url: password_reset_edit_path(token: params[:token]) do |form| %>
+
+  <div>
+    <%= form.label :password, class: "form-label" %>
+    <%= form.password_field :password, class: "form-control" %><br>
+    <%= form.submit "Mudar Senha", class: "btn btn-primary" %>
+  </div>
+
+<% end %>
