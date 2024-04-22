@@ -1,12 +1,11 @@
-<div id="<%= dom_id post %>">
+<div id="<%= dom_id post %>" class="card">
+  <div class="card-header">
   <p>
-    <strong>Title:</strong>
-    <%= post.title %>
+    <strong><%= pluralize post.comments.count, "comment" %></strong>
   </p>
-
-  <p>
-    <strong>Content:</strong>
-    <%= post.content %>
-  </p>
-
+  </div>
+  <div class="card-body">
+    <h5 class="card-title"><%= post.title %></h5>
+    <p class="card-text"><%= post.content %></p>
+  </div>
 </div>

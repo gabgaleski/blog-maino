@@ -1,0 +1,7 @@
+<div class="form-floating">
+  <%= form_with model: [ post, Comment.new ] do |form| %>
+    Seu comentario: <br>
+    <%= form.text_area :content, class: "form-control" %>
+    <%= form.submit class: "btn btn-secondary mt-3" %>
+  <% end %>
+</div>

@@ -1,0 +1,21 @@
+<h1> Editar Conta</h1>
+
+<%= form_with model: Current.user, url: profile_path do |f| %>
+
+  <% if f.object.errors.any? %>
+    <div class="alert alert-danger">
+      <% f.object.errors.full_messages.each do |message| %>
+        <p><%= message %></p>
+     <% end %>
+    </div>
+  <% end %>
+
+  <div>
+    <%= f.label :email %>
+    <%= f.email_field :email, class: "form-control" %><br>
+    <%= f.label :password %>
+    <%= f.password_field :password, class: "form-control" %><br>
+    <%= f.submit "Alterar", class: "btn btn-primary" %>
+  </div>
+
+<% end %>
