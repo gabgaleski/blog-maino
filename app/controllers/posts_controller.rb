@@ -36,15 +36,14 @@ class PostsController < ApplicationController
 
   # PATCH/PUT /posts/1 or /posts/1.json
   def update
-    respond_to do |format|
-      if Current.user.posts.update(post_params)
-        format.html { redirect_to post_url(@post), notice: "Post was successfully updated." }
-        format.json { render :show, status: :ok, location: @post }
+
+      if Current.user == @post.user &&  @post.update(post_update_params)
+        redirect_to posts_path, notice: "Post atualizado com sucesso"
       else
-        format.html { render :edit, status: :unprocessable_entity }
-        format.json { render json: @post.errors, status: :unprocessable_entity }
+        redirect_to posts_path, notice: "Nao é possivel editar esse post"
+        # render json: { error: "Nao foi possivel editar o post" }, status: :unprocessable_entity
       end
-    end
+
   end
 
   # DELETE /posts/1 or /posts/1.json
@@ -66,6 +65,10 @@ class PostsController < ApplicationController
     # Only allow a list of trusted parameters through.
     def post_params
       params.require(:post).permit(:title, :content, :user_id)
+    end
+
+    def post_update_params
+      params.require(:post).permit(:id, :title, :content, :user_id)
     end
 
 
