@@ -1,4 +1,4 @@
-<div id="<%= dom_id(comment) %>" class="container">
+<div id="<%= dom_id(comment) %>" class="card p-3 my-3 container w-75">
 
   <div>
     <% if comment.user_id %>
@@ -8,6 +8,6 @@
     <% end %>
   </div>  
 
-  <%= comment.content %>
-    - <%= time_tag comment.created_at, "data-local": "time-ago" %>
+  <p><%= comment.content %></p>
+  <p><%= time_tag comment.created_at, "data-local": "time-ago" %></p>
 </div>
