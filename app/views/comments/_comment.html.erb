@@ -1,4 +1,13 @@
-<div id="<%= dom_id(comment) %>">
+<div id="<%= dom_id(comment) %>" class="container">
+
+  <div>
+    <% if comment.user_id %>
+      <strong><%= comment.user.email %></strong>
+    <% else %>
+      <strong>Anonimo</strong>
+    <% end %>
+  </div>  
+
   <%= comment.content %>
     - <%= time_tag comment.created_at, "data-local": "time-ago" %>
 </div>

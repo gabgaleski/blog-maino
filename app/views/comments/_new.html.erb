@@ -1,4 +1,4 @@
-<div class="form-floating">
+<div class="form-floating my-3">
   <%= form_with model: [ post, Comment.new ] do |form| %>
     Seu comentario: <br>
     <%= form.text_area :content, class: "form-control" %>

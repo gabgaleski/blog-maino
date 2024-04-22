@@ -3,6 +3,7 @@
   <p>
     <strong><%= pluralize post.comments.count, "comment" %></strong>
   </p>
+    <strong><%= post.user.email %></strong>
   </div>
   <div class="card-body">
     <h5 class="card-title"><%= post.title %></h5>
