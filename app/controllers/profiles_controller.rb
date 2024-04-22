@@ -8,7 +8,7 @@ class ProfilesController < ApplicationController
     if Current.user.update(profile_params)
       redirect_to root_path, notice: "Perfil atualizado com sucesso"
     else
-      render :edit
+      render :edit, status: :unprocessable_entity
     end
   end
 

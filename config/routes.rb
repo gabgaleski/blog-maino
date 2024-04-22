@@ -1,8 +1,4 @@
 Rails.application.routes.draw do
-  scope "(:locale)", locale: /en|es/ do
-    get '/:locale' => 'dashboard#index' 
-
-
     root 'main#index'
 
     resources :posts do 
@@ -28,5 +24,4 @@ Rails.application.routes.draw do
     get '/password/reset', to: 'password_resets#new'
     post '/password/reset', to: 'password_resets#create'
 
-  end
 end

@@ -26,7 +26,7 @@ class PostsController < ApplicationController
 
     respond_to do |format|
       if Current.user.posts.create(post_params)
-        format.html { redirect_to posts_path, notice: "Post was successfully created." }
+        format.html { redirect_to posts_path, notice: "Post criado com sucesso." }
         format.json { render :show, status: :created, location: @post }
       else
         format.html { render :new, status: :unprocessable_entity }

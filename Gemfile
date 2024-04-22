@@ -69,3 +69,5 @@ group :test do
 end
 
 gem "pagy", "~> 8.2"
+
+gem "dockerfile-rails", ">= 1.6", :group => :development
